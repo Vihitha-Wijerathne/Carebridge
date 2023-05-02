@@ -7,7 +7,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="283dp"
-        android:layout_height="320dp"
+        android:layout_width="139dp"
+        android:layout_height="148dp"
         android:text="food" />
+
 </FrameLayout>
