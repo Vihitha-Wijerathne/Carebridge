@@ -6,13 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/navFood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/navHome"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:onClick="addFragOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navEdu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/navbar_home" />
+
+    <ImageButton
+        android:id="@+id/navEdu"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:onClick="addFragOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navFood"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/navHome"
+        app:srcCompat="@drawable/navbar_edu" />
+
+    <ImageButton
+        android:id="@+id/navFood"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:onClick="addFragOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navMedi"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/navEdu"
+        app:srcCompat="@drawable/navbar_food" />
+
+    <ImageButton
+        android:id="@+id/navMedi"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:onClick="addFragOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navUser"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/navFood"
+        app:srcCompat="@drawable/navbar_medi" />
+
+    <ImageButton
+        android:id="@+id/navUser"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:onClick="addFragOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/navMedi"
+        app:srcCompat="@drawable/navbar_user" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.carebridge.Homefragment"
+        android:layout_width="411dp"
+        android:layout_height="661dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_homefragment" />
 </androidx.constraintlayout.widget.ConstraintLayout>
