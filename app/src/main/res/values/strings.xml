@@ -85,5 +85,7 @@
     <string name="edu1des">We are donating education resources and stationary for school children.</string>
     <string name="edu2des">We are university students and we are organizing a online free seminar for O/L Students. Those who like to volunteer, please contact us. </string>
     <string name="edu3des">Aims to ensure children in srilanka have access to education by closing access gaps and ensuring that they are enough facilities in place to support their learning</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
