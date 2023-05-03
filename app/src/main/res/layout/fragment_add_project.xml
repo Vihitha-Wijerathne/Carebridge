@@ -144,29 +144,41 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reg_description" />
 
-    <ImageButton
-        android:id="@+id/upload_image"
-        android:layout_width="313dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="@dimen/start_margin"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="@dimen/end_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:srcCompat="@drawable/baseline_upload_file_24" />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_height_2"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginTop="@dimen/top_margin_1"
+            android:layout_marginEnd="@dimen/end_margin"
+            android:hint="@string/e_type"
+            app:layout_constraintTop_toBottomOf="@+id/p_contact"
+            tools:layout_editor_absoluteX="47dp" />
+
+        <ImageButton
+            android:id="@+id/upload_image"
+            android:layout_width="313dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/end_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner1"
+            app:srcCompat="@drawable/baseline_upload_file_24" />
 
         <Button
-            android:id="@+id/submit_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/top_margin_2"
-            android:backgroundTint="@color/grey1"
-            android:text="@string/submit_btn"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_up" />
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top_margin_2"
+                android:backgroundTint="@color/grey1"
+                android:text="@string/submit_btn"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_up" />
 
         <TextView
             android:id="@+id/image_up"
@@ -177,17 +189,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/upload_image" />
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/input_height_2"
-        android:layout_marginStart="@dimen/start_margin"
-        android:layout_marginTop="@dimen/top_margin_1"
-        android:layout_marginEnd="@dimen/end_margin"
-        android:hint="@string/e_type"
-        app:layout_constraintTop_toBottomOf="@+id/p_contact"
-        tools:layout_editor_absoluteX="47dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
