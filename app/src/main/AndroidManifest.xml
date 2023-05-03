@@ -23,6 +23,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".EducationCard"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false"
             android:label="@string/title_activity_sign_up"
