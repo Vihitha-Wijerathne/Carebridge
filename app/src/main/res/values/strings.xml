@@ -106,5 +106,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="title_activity_welcome_page">WelcomePage</string>
+    <string name="title_activity_food_card">FoodCard</string>
 
 </resources>
