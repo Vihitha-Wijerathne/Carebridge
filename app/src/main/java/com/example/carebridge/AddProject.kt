@@ -2,13 +2,28 @@ package com.example.carebridge
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.Fragment
+import com.example.carebridge.Models.ProjectModel
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+
 
 class AddProject : Fragment() {
+
+    private lateinit var dbRef: DatabaseReference
+
+    private lateinit var projectName: EditText
+    private lateinit var projectDate: EditText
+    private lateinit var projectTime: EditText
+    private lateinit var projectLocation: EditText
+    private lateinit var projectDescription: EditText
+    private lateinit var projectContact: EditText
+    private lateinit var projectType: Spinner
+    private lateinit var submitBtn: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +55,73 @@ class AddProject : Fragment() {
             }
         }
 
+        projectName = view.findViewById(R.id.p_name)
+        projectDate = view.findViewById(R.id.p_date)
+        projectTime = view.findViewById(R.id.p_time)
+        projectLocation = view.findViewById(R.id.p_place)
+        projectDescription = view.findViewById(R.id.reg_description)
+        projectContact = view.findViewById(R.id.p_contact)
+        projectType = view.findViewById<Spinner>(R.id.spinner1)
+        submitBtn = view.findViewById(R.id.submit_button)
 
+        dbRef = FirebaseDatabase.getInstance().getReference("Project")
+
+        submitBtn.setOnClickListener {
+            saveProjectData()
+        }
         return view
+    }
+    private fun saveProjectData(){
+        //getting values
+        val pName = projectName.text.toString()
+        val pDate = projectDate.text.toString()
+        val pTime = projectTime.text.toString()
+        val pLocation = projectLocation.text.toString()
+        val pDescription = projectDescription.text.toString()
+        val pContact = projectContact.text.toString()
+        val pType = projectType.selectedItem.toString()
+
+        if (pName.isEmpty()){
+            projectName.error = "please enter project name"
+        }
+
+        if (pDate.isEmpty()){
+            projectDate.error = "please enter project date"
+        }
+
+        if (pTime.isEmpty()){
+            projectTime.error = "please enter project time"
+        }
+
+        if (pLocation.isEmpty()){
+            projectLocation.error = "please enter project Location"
+        }
+
+        if (pDescription.isEmpty()){
+            projectDescription.error = "please enter project Description"
+        }
+
+        if (pContact.isEmpty()){
+            projectContact.error = "please enter project Contact"
+        }
+
+        val projectId = dbRef.push().key!!
+
+        val project = ProjectModel(projectId,pName,pDate,pTime,pLocation,pDescription,pContact,pType)
+
+        dbRef.child(projectId).setValue(project)
+            .addOnCompleteListener {
+                Toast.makeText(requireContext(),"Data insterted Successfully", Toast.LENGTH_LONG).show()
+
+                projectName.text.clear()
+                projectDate.text.clear()
+                projectTime.text.clear()
+                projectLocation.text.clear()
+                projectDescription.text.clear()
+                projectContact.text.clear()
+
+            }.addOnFailureListener { err ->
+                Toast.makeText(requireContext(),"Error ${err.message}", Toast.LENGTH_LONG).show()
+            }
     }
 }

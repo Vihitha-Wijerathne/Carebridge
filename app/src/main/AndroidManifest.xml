@@ -14,7 +14,7 @@
         <activity
             android:name=".WelcomePage"
             android:exported="true"
-            android:label="@string/title_activity_welcome_page"
+            android:label="@string/app_name"
             android:theme="@style/Theme.Carebridge.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".EducationCard"
+            android:exported="false" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false"
