@@ -9,13 +9,18 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.carebridge.databinding.ActivityWelcomePageBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class WelcomePage : AppCompatActivity() {
 
     private lateinit var binding: ActivityWelcomePageBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+
         binding = ActivityWelcomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -36,7 +41,13 @@ class WelcomePage : AppCompatActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
+    }
+    override fun onStart() {
+        super.onStart()
 
-
+        if(firebaseAuth.currentUser != null){
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
