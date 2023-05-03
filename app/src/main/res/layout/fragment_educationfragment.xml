@@ -33,13 +33,15 @@
 
     <TextView
         android:id="@+id/textView2"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/Education"
         android:textSize="34sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" 
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,13 +51,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/educationprojects"
         android:layout_width="409dp"
+
         android:layout_height="560dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+
         tools:listitem="@layout/project_list_view" />
 
     <TextView
