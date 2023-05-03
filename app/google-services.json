@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982773504248",
+    "project_id": "carebridge-fbb47",
+    "storage_bucket": "carebridge-fbb47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982773504248:android:73ff189b94d8da356c430d",
+        "android_client_info": {
+          "package_name": "com.example.carebridge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982773504248-obucfvvj4nm4qvflnoa5s5im73o3qo8j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChy7t7jtML1TslISy1ImkRMmdzM5tnkxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982773504248-obucfvvj4nm4qvflnoa5s5im73o3qo8j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
