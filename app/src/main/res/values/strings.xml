@@ -1,3 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Carebridge</string>
+    <string name="app_name">CareBridge</string>
+
+    //Login
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="forgetPassword"><a href="#">Forget Password?</a></string>
+
+    //Register
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="website">Website</string>
+    <string name="location">Location</string>
+    <string name="password">Password</string>
+    <string name="retypepwd">Retype Password</string>
+    <string name="already_acc"><a href="#">Already have an account?</a></string>
+
+    //Add project
+    <string name="add_project">Add Project</string>
+    <string name="add_n_project">Add Project/Need</string>
+    <string name="p_name">Project/Item Name</string>
+    <string name="p_date">Date:  dd/mm/yyyy</string>
+    <string name="p_time">Time:    :   </string>
+    <string name="p_place">Place/Location</string>
+    <string name="p_description">Description</string>
+    <string name="p_contatct">Contact Details</string>
+    <string name="submit_btn">Submit</string>
+
+    //Edit project
+    <string name="edit_project">Edit Project</string>
+    <string name="edit_n_project">Edit Project/Need</string>
+    <string name="e_name">Project/Item Name</string>
+    <string name="e_date">Date:  dd/mm/yyyy</string>
+    <string name="e_time">Time:    :   </string>
+    <string name="e_place">Place/Location</string>
+    <string name="e_description">Description</string>
+    <string name="e_contatct">Contact Details</string>
+
+    //Edit account
+    <string name="edit_account">Edit Account</string>
+    <string name="edit_name">Name</string>
+    <string name="edit_phone">Phone Number</string>
+    <string name="edit_website">Website</string>
+    <string name="edit_location">Location</string>
+    <string name="edit_password">Password</string>
+    <string name="edit_retypepwd">Retype Password</string>
+    <string name="edit_already_acc"><a href="#">Already have an account?</a></string>
+    <string name="edit_btn">Edit</string>
+
+
+    //MEDICATION
+
+    <string name="topic">MEDICINE</string>
+    <string name="med_project1">Donation for Clinic</string>
+    <string name="med_project2">Medicine for Heart Patient</string>
+    <string name="med_project3">Blood Donation</string>
+    <string name="pr1des">We need some medication for our 24*7 clinic.
+        We provide medical assistant to those who need help free of charge.
+        Due to unavailability of essential medicine,
+        we cannot provide our service. If you can help, details are below.</string>
+    <string name="pr2des">I cannot find "Statins 500mg" medicine.
+        it is for my husband who had a heart surgery.
+        If anyone can help, contact me ASAP</string>
+    <string name="pr3des">We are SLIIT 2nd year students.
+        We are organizing a Blood Donation project. Those who like to donate, please view the details and contact us.</string>
+
+    //FOOD
+
+    <string name="topic2">FOOD</string>
+    <string name="food_project1">Pure Water</string>
+    <string name="food_project2">We are one</string>
+    <string name="food_project3">Street Child</string>
+    <string name="food1des">We are hoping to implement a water filtering system to a Village. Those who can help to this project, Please contact us.</string>
+    <string name="food2des">Our people are suffering due to a food shortage in our country. We are one a is national initiative that enables everyone Of us to hap dispel hunger in others in any way we can,</string>
+    <string name="food3des">Hopes to help remedy this food crisis by providing children with free access to essential food products</string>
+
+    //EDUCATION
+
+    <string name="topic3">EDUCATION</string>
+    <string name="edu_project1">EDU Sathkara</string>
+    <string name="edu_project2">O/L Seminar</string>
+    <string name="edu_project3">Sip Sathara</string>
+    <string name="edu1des">We are donating education resources and stationary for school children.</string>
+    <string name="edu2des">We are university students and we are organizing a online free seminar for O/L Students. Those who like to volunteer, please contact us. </string>
+    <string name="edu3des">Aims to ensure children in srilanka have access to education by closing access gaps and ensuring that they are enough facilities in place to support their learning</string>
+
 </resources>
