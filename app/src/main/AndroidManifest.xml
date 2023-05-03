@@ -14,7 +14,7 @@
         <activity
             android:name=".WelcomePage"
             android:exported="true"
-            android:label="@string/title_activity_welcome_page"
+            android:label="@string/app_name"
             android:theme="@style/Theme.Carebridge.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
