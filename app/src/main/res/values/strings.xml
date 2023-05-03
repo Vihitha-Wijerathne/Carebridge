@@ -27,6 +27,8 @@
     <string name="p_description">Description</string>
     <string name="p_contatct">Contact Details</string>
     <string name="submit_btn">Submit</string>
+    <string name="p_type">Project Type</string>
+
 
     //Edit project
     <string name="edit_project">Edit Project</string>
@@ -37,6 +39,7 @@
     <string name="e_place">Place/Location</string>
     <string name="e_description">Description</string>
     <string name="e_contatct">Contact Details</string>
+    <string name="e_type">Project Type</string>
 
     //Edit account
     <string name="edit_account">Edit Account</string>
@@ -85,5 +88,17 @@
     <string name="edu1des">We are donating education resources and stationary for school children.</string>
     <string name="edu2des">We are university students and we are organizing a online free seminar for O/L Students. Those who like to volunteer, please contact us. </string>
     <string name="edu3des">Aims to ensure children in srilanka have access to education by closing access gaps and ensuring that they are enough facilities in place to support their learning</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
 
 </resources>

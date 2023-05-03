@@ -8,14 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 
-class AddProject : Fragment() {
+class EditProject : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_add_project, container, false)
+        val view = inflater.inflate(R.layout.fragment_edit_project, container, false)
 
         val back_button = view.findViewById<ImageView>(R.id.back_button)
         back_button.setOnClickListener {
@@ -23,7 +23,7 @@ class AddProject : Fragment() {
             startActivity(intent)
         }
 
-        val spinner = view.findViewById<Spinner>(R.id.spinner1)
+        val spinner = view.findViewById<Spinner>(R.id.spinner2)
 
         val types = arrayOf("Education","Food","Medicine")
         val arrayAdp = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,types)
@@ -39,7 +39,6 @@ class AddProject : Fragment() {
                 Toast.makeText(requireContext(),"Nothing is selected", Toast.LENGTH_LONG).show()
             }
         }
-
 
         return view
     }
