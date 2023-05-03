@@ -8,7 +8,6 @@
     android:id="@+id/myView"
     tools:context=".EditProject">
 
-
     <ImageView
         android:id="@+id/background"
         android:layout_width="wrap_content"
@@ -32,32 +31,32 @@
             app:srcCompat="@drawable/back_arrow" />
 
 
-        <TextView
-            android:id="@+id/edit_project"
-            android:layout_width="281dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="@dimen/top_margin_3"
-            android:text="@string/edit_n_project"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/back_button" />
+    <TextView
+        android:id="@+id/edit_project"
+        android:layout_width="281dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/edit_n_project"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_button" />
 
-        <EditText
-            android:id="@+id/e_name"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/input_height_2"
-            android:layout_marginStart="@dimen/start_margin"
-            android:layout_marginTop="@dimen/top_margin_3"
-            android:layout_marginEnd="@dimen/end_margin"
-            android:ems="10"
-            android:hint="@string/e_name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_project" />
+    <EditText
+        android:id="@+id/e_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height_2"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:ems="10"
+        android:hint="@string/e_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_project" />
 
         <TextView
             android:id="@+id/need_item"
@@ -187,6 +186,5 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/upload_image" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
