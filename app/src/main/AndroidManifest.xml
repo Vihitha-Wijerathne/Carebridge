@@ -12,10 +12,21 @@
         android:theme="@style/Theme.Carebridge"
         tools:targetApi="31">
         <activity
+            android:name=".WelcomePage"
+            android:exported="true"
+            android:label="@string/title_activity_welcome_page"
+            android:theme="@style/Theme.Carebridge.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SignUpActivity"
             android:exported="false"
             android:label="@string/title_activity_sign_up"
-            android:theme="@style/Theme.Carebridge.NoActionBar" />
+            android:theme="@style/Theme.Carebridge.NoActionBar"/>
         <activity
             android:name=".SignInActivity"
             android:exported="false"
@@ -23,13 +34,7 @@
             android:theme="@style/Theme.Carebridge.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
