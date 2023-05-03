@@ -7,10 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.google.firebase.auth.FirebaseAuth
 
 class Userfragment : Fragment() {
 
-
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +34,17 @@ class Userfragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        val logoutBtn = view.findViewById<Button>(R.id.logout_btn)
+        logoutBtn.setOnClickListener {
+            firebaseAuth.signOut()
+            val intent = Intent(activity, SignInActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
+
         return view
     }
 }
