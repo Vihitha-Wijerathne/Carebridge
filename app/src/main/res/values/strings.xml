@@ -45,6 +45,22 @@
     <string name="e_contatct">Contact Details</string>
     <string name="e_type">Project Type</string>
 
+    //View project_EDUCATION
+    <string name="Back">Back</string>
+    <string name="Education">EDUCATION</string>
+    <string name="Projects">Projects</string>
+    <string name="Search">Search Here</string>
+    <string name="Name1">Sip Sathara</string>
+    <string name="Description1">The Description</string>
+    <string name="Date1">Date :</string>
+    <string name="Time1">Time :</string>
+    <string name="Location1">Location :</string>
+    <string name="Contact1">Contact :</string>
+    <string name="Date1d">Monday 5th of June></string>
+    <string name="Time1d">8 am onwards</string>
+    <string name="Location1d">Therapuththa Maha Vidyalaya, Panakaduwa</string>
+    <string name="Contact1d">Dasun - 0771234578</string>
+
     //Edit account
     <string name="edit_account">Edit Account</string>
     <string name="edit_name">Name</string>

@@ -7,28 +7,60 @@
     android:layout_height="match_parent"
     tools:context=".Educationfragment">
 
+
+    <ImageView
+        android:id="@+id/back_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_arrow" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/education_book"
+        app:layout_constraintBottom_toTopOf="@+id/educationprojects"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="410dp"
-        android:layout_height="79dp"
-        android:layout_marginEnd="1dp"
-        android:gravity="center"
-        android:text="Education"
-        android:textSize="50dp"
-        android:textStyle="bold"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/Education"
+        android:textSize="34sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent" 
+
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/educationprojects"
         android:layout_width="409dp"
-        android:layout_height="622dp"
-        android:layout_marginTop="30dp"
+
+        android:layout_height="560dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+
         tools:listitem="@layout/project_list_view" />
 
     <TextView
@@ -43,7 +75,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
