@@ -2,10 +2,14 @@
 <resources>
     <string name="app_name">CareBridge</string>
 
+    //Welcome
+    <string name="viewpjct">View Projects</string>
+
     //Login
     <string name="email">Email</string>
     <string name="login">Login</string>
     <string name="forgetPassword"><a href="#">Forget Password?</a></string>
+    <string name="noAcc"><a href="#">Not Registered?, Sign Up Here</a></string>
 
     //Register
     <string name="register">Register</string>
@@ -51,6 +55,7 @@
     <string name="edit_retypepwd">Retype Password</string>
     <string name="edit_already_acc"><a href="#">Already have an account?</a></string>
     <string name="edit_btn">Edit</string>
+    <string name="logout_btn">Log Out</string>
 
 
     //MEDICATION
@@ -100,5 +105,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_welcome_page">WelcomePage</string>
 
 </resources>
