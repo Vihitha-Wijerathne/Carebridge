@@ -1,13 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_anchorGravity="center|center_horizontal"
     tools:context=".Homefragment">
 
+    <LinearLayout
+        android:id="@+id/medibtnback"
+        android:layout_width="115dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bottom_shape"
+        android:backgroundTint="@color/grey1"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/foodbtnback"
+        app:layout_constraintTop_toBottomOf="@+id/quote">
+
+        <ImageButton
+            android:id="@+id/educationibutton"
+            android:layout_width="115dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/grey1"
+            android:onClick="addFragOnClick"
+            android:src="@drawable/baseline_medical_services_24" />
+
+        <TextView
+            android:id="@+id/educationbutton"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="medicine"
+            android:textColor="#090202"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="640dp" />
+
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="178dp"
-        android:layout_height="271dp"
-        android:text="home" />
-</FrameLayout>
+        android:id="@+id/quote"
+        android:layout_width="271dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:shadowColor="#7A7575"
+        android:text="&quot;Alone we can do so little, together we can do so much.&quot;"
+        android:textColor="#605E5E"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <LinearLayout
+        android:id="@+id/educationbtnback"
+        android:layout_width="115dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bottom_shape"
+        android:backgroundTint="@color/grey1"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/foodbtnback"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quote">
+
+        <ImageButton
+            android:id="@+id/foodibutton"
+            android:layout_width="115dp"
+            android:layout_height="34dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/grey1"
+            android:onClick="addFragOnClick"
+            android:src="@drawable/education_book" />
+
+        <TextView
+            android:id="@+id/foodbutoon"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Education"
+            android:textColor="#040303"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="640dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/foodbtnback"
+        android:layout_width="115dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bottom_shape"
+        android:backgroundTint="@color/grey1"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/medibtnback"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/educationbtnback"
+        app:layout_constraintTop_toBottomOf="@+id/quote">
+
+        <ImageButton
+            android:id="@+id/medicineibutton"
+            android:layout_width="115dp"
+            android:layout_height="34dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/grey1"
+            android:onClick="addFragOnClick"
+            android:src="@drawable/food_icon" />
+
+        <TextView
+            android:id="@+id/medicinebutton"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="food"
+            android:textColor="#050505"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="640dp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="52dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodbtnback" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="413dp"
+        android:layout_height="244dp"
+        android:src="@drawable/newlogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="365dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="28dp"
+        android:clickable="true"
+        android:foregroundGravity="center_vertical"
+        android:layoutDirection="inherit"
+        android:layoutMode="clipBounds"
+        android:outlineAmbientShadowColor="@color/black"
+        app:cardBackgroundColor="@color/grey1"
+        app:cardCornerRadius="15dp"
+        app:flow_verticalAlign="center"
+        app:flow_verticalStyle="spread_inside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <ImageView
+            android:id="@+id/cardimg1"
+            android:layout_width="143dp"
+            android:layout_height="101dp"
+            android:layout_gravity="bottom|left"
+            android:src="@drawable/charity" />
+
+        <TextView
+            android:id="@+id/cardtext1"
+            android:layout_width="211dp"
+            android:layout_height="95dp"
+            android:layout_gravity="bottom|right"
+            android:text="New event to donate all the necessary food supplies to people living in a small town near galle called karapitiya.join us and help the people in need."
+            android:textColor="#050505"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/cardtopic1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:fontFamily="@font/baloo_da"
+            android:gravity="center"
+            android:text="Project by SLIIT Students"
+            android:textColor="#090909"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

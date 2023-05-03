@@ -1,5 +1,6 @@
 package com.example.carebridge.Adaptors
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,16 +23,19 @@ class FoodAdaptor (private val projectList: ArrayList<ProjectModel>) : RecyclerV
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodAdaptor.ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.food_card_view, parent,false)
-        return ViewHolder(itemView, mListner)
+        return FoodAdaptor.ViewHolder(itemView, mListner)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = projectList[position]
-        if(currentItem.projecType=="Food") {
+        if (currentItem.projecType == "Food") {
             holder.projectName.text = currentItem.projectName
             holder.projectDescription.text = currentItem.projectDescription
+            Log.d("FoodAdaptor", "Displaying item at position $position: ${currentItem.projectName} (${currentItem.projecType})")
+        } else {
+            Log.d("FoodAdaptor", "Skipping item at position $position: ${currentItem.projectName} (${currentItem.projecType})")
         }
     }
 
@@ -39,7 +43,7 @@ class FoodAdaptor (private val projectList: ArrayList<ProjectModel>) : RecyclerV
         return projectList.size
     }
 
-    class ViewHolder(itemView: View, clickListner: onItemClickListner) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View, clickListner: FoodAdaptor.onItemClickListner) : RecyclerView.ViewHolder(itemView) {
 
         val projectName : TextView = itemView.findViewById(R.id.educardtopic)
         val projectDescription : TextView = itemView.findViewById(R.id.educard_description)
