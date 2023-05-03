@@ -196,7 +196,7 @@
         android:layout_height="146dp"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:text="@string/Decription1"
+        android:text="@string/Description1"
         android:textSize="16sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
