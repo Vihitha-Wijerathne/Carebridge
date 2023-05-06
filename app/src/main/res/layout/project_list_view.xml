@@ -26,10 +26,10 @@
 
         <ImageView
             android:id="@+id/educardimg"
-            android:layout_width="143dp"
-            android:layout_height="101dp"
+            android:layout_width="124dp"
+            android:layout_height="88dp"
             android:layout_gravity="bottom|left"
-            android:src="@drawable/charity" />
+            android:src="@drawable/eduicon" />
 
         <TextView
             android:id="@+id/educard_description"

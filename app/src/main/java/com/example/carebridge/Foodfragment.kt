@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.carebridge.Adaptors.EduAdaptor
+import com.example.carebridge.Adaptors.FoodAdaptor
 import com.example.carebridge.Models.ProjectModel
 import com.google.firebase.database.*
 
@@ -54,10 +54,10 @@ class Foodfragment : Fragment() {
                         val projectData = projectSnap.getValue(ProjectModel::class.java)
                         projectList.add(projectData!!)
                     }
-                    val projectAdaptor = EduAdaptor(projectList)
+                    val projectAdaptor = FoodAdaptor(projectList)
                     projectsRecyclerView.adapter = projectAdaptor
 
-                    projectAdaptor.setOnItemClickListner(object : EduAdaptor.onItemClickListner {
+                    projectAdaptor.setOnItemClickListner(object : FoodAdaptor.onItemClickListner {
                         override fun onItemClick(position: Int) {
 
                             val intent = Intent(context, FoodCard::class.java)

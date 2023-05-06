@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/project_list_view" />
+        tools:listitem="@layout/med_card_view" />
 
     <TextView
         android:id="@+id/medicineLoading"
