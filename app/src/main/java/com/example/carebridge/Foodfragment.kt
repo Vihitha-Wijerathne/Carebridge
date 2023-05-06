@@ -44,7 +44,7 @@ class Foodfragment : Fragment() {
         projectsRecyclerView.visibility = View.GONE
         loadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Project")
+        dbRef = FirebaseDatabase.getInstance().getReference("ProjectFood")
 
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {

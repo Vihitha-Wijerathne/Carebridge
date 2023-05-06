@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddProjectFood">
+
+
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/background_3" />
+
+    <ImageView
+        android:id="@+id/fback_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_arrow" />
+
+
+    <TextView
+        android:id="@+id/add_project"
+        android:layout_width="281dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_n_project"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fback_button" />
+
+    <EditText
+        android:id="@+id/fp_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height_2"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:ems="10"
+        android:hint="@string/p_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_project" />
+
+    <TextView
+        android:id="@+id/need_item"
+        android:layout_width="313dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="@dimen/top_margin_1"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:text="   (If you need something, please mention the date you want it)"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fp_name" />
+
+    <EditText
+        android:id="@+id/fp_date"
+        android:layout_width="173dp"
+        android:layout_height="@dimen/input_height_2"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:hint="@string/p_date"
+        android:inputType="date"
+        app:layout_constraintStart_toEndOf="@+id/background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/need_item" />
+
+    <EditText
+        android:id="@+id/fp_time"
+        android:layout_width="114dp"
+        android:layout_height="@dimen/input_height_2"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:ems="10"
+        android:hint="@string/p_time"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/need_item" />
+
+    <EditText
+        android:id="@+id/fp_place"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height_2"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="@dimen/top_margin_1"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:ems="10"
+        android:hint="@string/p_place"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fp_date" />
+
+    <EditText
+        android:id="@+id/freg_description"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height_2"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="@dimen/top_margin_1"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:ems="10"
+        android:hint="@string/p_description"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fp_place" />
+
+    <EditText
+        android:id="@+id/fp_contact"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height_2"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="@dimen/top_margin_1"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:autoSizeTextType="uniform"
+        android:ems="10"
+        android:hint="@string/p_contatct"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/freg_description" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height_2"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="@dimen/top_margin_1"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:hint="@string/e_type"
+        app:layout_constraintTop_toBottomOf="@+id/fp_contact"
+        tools:layout_editor_absoluteX="47dp" />
+
+    <ImageButton
+        android:id="@+id/upload_image"
+        android:layout_width="313dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/end_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3"
+        app:srcCompat="@drawable/baseline_upload_file_24" />
+
+    <Button
+        android:id="@+id/fsubmit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin_2"
+        android:backgroundTint="@color/grey1"
+        android:text="@string/submit_btn"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_up" />
+
+    <TextView
+        android:id="@+id/image_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Add your images"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upload_image" />
+</androidx.constraintlayout.widget.ConstraintLayout>

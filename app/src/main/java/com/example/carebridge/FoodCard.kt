@@ -23,6 +23,13 @@ class FoodCard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_card)
 
+        prName = findViewById(R.id.prName)
+        prDate = findViewById(R.id.prDate)
+        prTime = findViewById(R.id.prTime)
+        prLocation = findViewById(R.id.prLocation)
+        prDescription = findViewById(R.id.prDescription)
+        prContact = findViewById(R.id.prContact)
+
         initView()
         setValuesToViews()
     }
