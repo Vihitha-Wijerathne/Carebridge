@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carebridge.Adaptors.EduAdaptor
 import com.example.carebridge.Models.ProjectModel
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 
@@ -22,7 +23,7 @@ class EditProjectEdu : Fragment() {
     private lateinit var loadingData: TextView
     private lateinit var projectList: ArrayList<ProjectModel>
     private lateinit var dbRef: DatabaseReference
-
+    private lateinit var firebaseAuth: FirebaseAuth
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -44,10 +45,17 @@ class EditProjectEdu : Fragment() {
     }
 
     private fun getProjectData(){
+        var userId = ""
+
         projectsRecyclerView.visibility = View.GONE
         loadingData.visibility = View.VISIBLE
 
         dbRef = FirebaseDatabase.getInstance().getReference("Project")
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth.currentUser?.let {
+            userId = it.uid
+        }
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -55,7 +63,10 @@ class EditProjectEdu : Fragment() {
                 if (snapshot.exists()){
                     for (projectSnap in snapshot.children){
                         val projectData = projectSnap.getValue(ProjectModel::class.java)
-                        projectList.add(projectData!!)
+
+                        if(projectData?.userId.equals(userId)) {
+                            projectList.add(projectData!!)
+                        }
                     }
                     val projectAdaptor = EduAdaptor(projectList)
                     projectsRecyclerView.adapter = projectAdaptor

@@ -8,14 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.carebridge.Models.ProjectModel
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 
 class AddProjectMedi : Fragment() {
-
     private lateinit var dbRef: DatabaseReference
-
     private lateinit var projectName: EditText
     private lateinit var projectDate: EditText
     private lateinit var projectTime: EditText
@@ -24,7 +23,8 @@ class AddProjectMedi : Fragment() {
     private lateinit var projectContact: EditText
     private lateinit var projectType: Spinner
     private lateinit var submitBtn: Button
-
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var project: ProjectModel
 
     @SuppressLint("MissingInflatedId", "CutPasteId")
     override fun onCreateView(
@@ -103,9 +103,16 @@ class AddProjectMedi : Fragment() {
             projectContact.error = "please enter project Contact"
         }
 
-        val projectId = dbRef.push().key!!
+        firebaseAuth = FirebaseAuth.getInstance()
+        val user = firebaseAuth.currentUser
+        var projectId = ""
 
-        val project = ProjectModel(projectId,pName,pDate,pTime,pLocation,pDescription,pContact,pType)
+        user?.let {
+            val uid = it.uid
+
+            projectId = dbRef.push().key!!
+            project = ProjectModel(uid, projectId,pName,pDate,pTime,pLocation,pDescription,pContact,pType)
+        }
 
         dbRef.child(projectId).setValue(project)
             .addOnCompleteListener {

@@ -47,8 +47,6 @@ class SignUpActivity : AppCompatActivity() {
             val pass = binding.regPassword.text.toString()
             val confirmPass = binding.rePassword.text.toString()
 
-
-
             if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()){
                 if(pass.equals(confirmPass)){
 

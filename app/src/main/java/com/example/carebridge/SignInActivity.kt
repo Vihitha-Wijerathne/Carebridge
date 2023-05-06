@@ -40,8 +40,6 @@ class SignInActivity : AppCompatActivity() {
                             startActivity(intent)
 
                             val user = firebaseAuth.currentUser
-                            println("-----------------user------------------")
-                            println(user)
                             user?.let {
                                 // Name, email address, and profile photo Url
                                 val name = it.displayName
