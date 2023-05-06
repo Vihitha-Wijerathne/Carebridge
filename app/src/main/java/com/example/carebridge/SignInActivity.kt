@@ -34,11 +34,35 @@ class SignInActivity : AppCompatActivity() {
             val pass = binding.logPassword.text.toString()
 
             if(email.isNotEmpty() && pass.isNotEmpty()){
-
                     firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener {
                         if (it.isSuccessful) {
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
+
+                            val user = firebaseAuth.currentUser
+                            println("-----------------user------------------")
+                            println(user)
+                            user?.let {
+                                // Name, email address, and profile photo Url
+                                val name = it.displayName
+                                val email = it.email
+                                val photoUrl = it.photoUrl
+
+                                // Check if user's email is verified
+                                val emailVerified = it.isEmailVerified
+
+                                // The user's ID, unique to the Firebase project. Do NOT use this value to
+                                // authenticate with your backend server, if you have one. Use
+                                // FirebaseUser.getIdToken() instead.
+                                val uid = it.uid
+
+                                println(name)
+                                println(email)
+                                println(photoUrl)
+                                println(emailVerified)
+                                println(uid)
+                            }
+
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
