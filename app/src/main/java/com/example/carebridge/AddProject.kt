@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.carebridge.Models.ProjectModel
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -24,6 +25,8 @@ class AddProject : Fragment() {
     private lateinit var projectContact: EditText
     private lateinit var projectType: Spinner
     private lateinit var submitBtn: Button
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var project: ProjectModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -105,14 +108,20 @@ class AddProject : Fragment() {
             projectContact.error = "please enter project Contact"
         }
 
-        val projectId = dbRef.push().key!!
+        firebaseAuth = FirebaseAuth.getInstance()
+        val user = firebaseAuth.currentUser
+        var projectId = ""
 
-        val project = ProjectModel(projectId,pName,pDate,pTime,pLocation,pDescription,pContact,pType)
+        user?.let {
+            val uid = it.uid
+
+            projectId = dbRef.push().key!!
+            project = ProjectModel(uid, projectId,pName,pDate,pTime,pLocation,pDescription,pContact,pType)
+        }
 
         dbRef.child(projectId).setValue(project)
             .addOnCompleteListener {
                 Toast.makeText(requireContext(),"Data insterted Successfully", Toast.LENGTH_LONG).show()
-
                 projectName.text.clear()
                 projectDate.text.clear()
                 projectTime.text.clear()

@@ -25,7 +25,6 @@
         android:layout_height="33dp"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:text="Username"
         android:textColor="#090909"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -117,7 +116,6 @@
         android:layout_width="155dp"
         android:layout_height="44dp"
         android:gravity="center"
-        android:text="abcd@gmail.com"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/useremailtxt"
@@ -128,7 +126,6 @@
         android:layout_width="155dp"
         android:layout_height="44dp"
         android:gravity="center"
-        android:text="colombo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/usercitytxt"
@@ -139,7 +136,6 @@
         android:layout_width="155dp"
         android:layout_height="44dp"
         android:gravity="center"
-        android:text="0777333789"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/userteletxt"
@@ -150,7 +146,6 @@
         android:layout_width="155dp"
         android:layout_height="44dp"
         android:gravity="center"
-        android:text="doctor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/userstatustxt"
@@ -207,5 +202,6 @@
         android:text="@string/logout_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
