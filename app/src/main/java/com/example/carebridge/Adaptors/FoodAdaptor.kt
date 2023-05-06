@@ -24,15 +24,14 @@ class FoodAdaptor (private val projectList: ArrayList<ProjectModel>) : RecyclerV
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.food_card_view, parent,false)
-        return ViewHolder(itemView, mListner)
+        return FoodAdaptor.ViewHolder(itemView, mListner)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = projectList[position]
-        if(currentItem.projecType=="Food") {
-            holder.projectName.text = currentItem.projectName
-            holder.projectDescription.text = currentItem.projectDescription
-        }
+
+        holder.projectName.text = currentItem.projectName
+        holder.projectDescription.text = currentItem.projectDescription
     }
 
     override fun getItemCount(): Int {

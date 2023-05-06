@@ -123,5 +123,6 @@
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="title_activity_welcome_page">WelcomePage</string>
     <string name="title_activity_food_card">FoodCard</string>
+    <string name="title_activity_edit_edu_card">EditEduCard</string>
 
 </resources>
