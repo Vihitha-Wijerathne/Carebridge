@@ -23,7 +23,7 @@ class MedAdaptor (private val projectList: ArrayList<ProjectModel>) : RecyclerVi
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.project_list_view, parent,false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.med_card_view, parent,false)
         return ViewHolder(itemView, mListner)
     }
 

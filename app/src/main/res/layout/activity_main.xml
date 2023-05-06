@@ -21,8 +21,8 @@
 
     <ImageButton
         android:id="@+id/navHome"
-        android:layout_width="51dp"
-        android:layout_height="46dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:background="@color/white"
         android:onClick="addFragOnClick"
@@ -34,8 +34,8 @@
 
     <ImageButton
         android:id="@+id/navEdu"
-        android:layout_width="51dp"
-        android:layout_height="46dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:background="@color/white"
         android:onClick="addFragOnClick"
@@ -47,8 +47,8 @@
 
     <ImageButton
         android:id="@+id/navFood"
-        android:layout_width="51dp"
-        android:layout_height="46dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:background="@color/white"
         android:onClick="addFragOnClick"
@@ -60,8 +60,8 @@
 
     <ImageButton
         android:id="@+id/navMedi"
-        android:layout_width="51dp"
-        android:layout_height="46dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:background="@color/white"
         android:onClick="addFragOnClick"
@@ -73,8 +73,8 @@
 
     <ImageButton
         android:id="@+id/navUser"
-        android:layout_width="51dp"
-        android:layout_height="46dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:background="@color/white"
         android:onClick="addFragOnClick"

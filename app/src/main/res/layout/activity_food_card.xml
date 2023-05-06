@@ -36,9 +36,9 @@
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey1"
+        android:backgroundTint="@color/green_food"
         android:text="Back"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="@string/topic"
+        android:text="FOOD"
         android:textSize="34sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -222,27 +222,23 @@
         app:layout_constraintVertical_bias="0.404" />
 
     <ImageView
-        android:id="@+id/imageVieW2"
-        android:layout_width="43dp"
-        android:layout_height="40dp"
-        android:src="@drawable/education_book"
-        app:layout_constraintBottom_toTopOf="@+id/projectImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.23"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
-
-    <ImageView
         android:id="@+id/projectImage"
         android:layout_width="238dp"
         android:layout_height="215dp"
-        android:src="@drawable/charity"
+        android:src="@drawable/food_donation"
         app:layout_constraintBottom_toTopOf="@+id/submit_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/background"
         app:layout_constraintVertical_bias="0.115" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        app:srcCompat="@drawable/food_icon"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="19dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

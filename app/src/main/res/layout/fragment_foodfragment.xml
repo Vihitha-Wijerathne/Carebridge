@@ -7,7 +7,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Foodfragment">
-
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/background" />
     <TextView
         android:id="@+id/textView2"
         android:layout_width="410dp"
@@ -41,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:listitem="@layout/project_list_view" />
+        tools:listitem="@layout/food_card_view" />
 
     <TextView
         android:id="@+id/foodLoading"
