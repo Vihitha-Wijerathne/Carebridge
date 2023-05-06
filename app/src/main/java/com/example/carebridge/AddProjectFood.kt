@@ -1,18 +1,18 @@
 package com.example.carebridge
 
-import android.content.Intent
+import android.annotation.SuppressLint
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.fragment.app.Fragment
 import com.example.carebridge.Models.ProjectModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 
-class AddProject : Fragment() {
+class AddProjectFood : Fragment() {
 
     private lateinit var dbRef: DatabaseReference
 
@@ -25,22 +25,18 @@ class AddProject : Fragment() {
     private lateinit var projectType: Spinner
     private lateinit var submitBtn: Button
 
+
+    @SuppressLint("MissingInflatedId", "CutPasteId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_add_project, container, false)
+        val view = inflater.inflate(R.layout.fragment_add_project_food, container, false)
 
-        val back_button = view.findViewById<ImageView>(R.id.back_button)
-        back_button.setOnClickListener {
-            val intent = Intent(activity, MainActivity::class.java)
-            startActivity(intent)
-        }
+        val spinner = view.findViewById<Spinner>(R.id.spinner3)
 
-        val spinner = view.findViewById<Spinner>(R.id.spinner1)
-
-        val types = arrayOf("Education")
+        val types = arrayOf("Food")
         val arrayAdp = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,types)
         spinner.adapter = arrayAdp
 
@@ -55,22 +51,26 @@ class AddProject : Fragment() {
             }
         }
 
-        projectName = view.findViewById(R.id.p_name)
-        projectDate = view.findViewById(R.id.p_date)
-        projectTime = view.findViewById(R.id.p_time)
-        projectLocation = view.findViewById(R.id.p_place)
-        projectDescription = view.findViewById(R.id.reg_description)
-        projectContact = view.findViewById(R.id.p_contact)
-        projectType = view.findViewById<Spinner>(R.id.spinner1)
-        submitBtn = view.findViewById(R.id.submit_button)
+        projectName = view.findViewById(R.id.fp_name)
+        projectDate = view.findViewById(R.id.fp_date)
+        projectTime = view.findViewById(R.id.fp_time)
+        projectLocation = view.findViewById(R.id.fp_place)
+        projectDescription = view.findViewById(R.id.freg_description)
+        projectContact = view.findViewById(R.id.fp_contact)
+        projectType = view.findViewById<Spinner>(R.id.spinner3)
+        submitBtn = view.findViewById(R.id.fsubmit_button)
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Project")
+        dbRef = FirebaseDatabase.getInstance().getReference("ProjectFood")
 
         submitBtn.setOnClickListener {
             saveProjectData()
         }
+
+
         return view
     }
+
+
     private fun saveProjectData(){
         //getting values
         val pName = projectName.text.toString()
@@ -124,4 +124,6 @@ class AddProject : Fragment() {
                 Toast.makeText(requireContext(),"Error ${err.message}", Toast.LENGTH_LONG).show()
             }
     }
+
+
 }

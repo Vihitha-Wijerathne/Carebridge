@@ -22,7 +22,7 @@ class Userfragment : Fragment() {
         val addProjectBtn = view.findViewById<Button>(R.id.addprojectbtn)
         addProjectBtn.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, AddProject())
+                .replace(R.id.fragmentContainerView2, SelectProjectType())
                 .addToBackStack(null)
                 .commit()
         }

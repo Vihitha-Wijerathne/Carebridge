@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -65,6 +67,7 @@ class Educationfragment : Fragment() {
 
                             //put extras
                             intent.putExtra("pId", projectList[position].projectId)
+                            Toast.makeText(requireContext(),"Item is ${projectList[position].projectName}", Toast.LENGTH_LONG).show()
                             intent.putExtra("pName", projectList[position].projectName)
                             intent.putExtra("pDate", projectList[position].projectDate)
                             intent.putExtra("pTime", projectList[position].projectTime)
@@ -72,7 +75,6 @@ class Educationfragment : Fragment() {
                             intent.putExtra("pDescription", projectList[position].projectDescription)
                             intent.putExtra("pContact", projectList[position].projectContact)
                             startActivity(intent)
-
 
                         }
 
