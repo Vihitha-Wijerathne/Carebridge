@@ -29,10 +29,9 @@ class FoodAdaptor (private val projectList: ArrayList<ProjectModel>) : RecyclerV
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = projectList[position]
-        if (currentItem.projecType == "Food") {
-            holder.projectName.text = currentItem.projectName
-            holder.projectDescription.text = currentItem.projectDescription
-        }
+
+        holder.projectName.text = currentItem.projectName
+        holder.projectDescription.text = currentItem.projectDescription
     }
 
     override fun getItemCount(): Int {

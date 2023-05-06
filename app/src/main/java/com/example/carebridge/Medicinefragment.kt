@@ -45,7 +45,7 @@ class Medicinefragment : Fragment() {
         projectsRecyclerView.visibility = View.GONE
         loadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Project")
+        dbRef = FirebaseDatabase.getInstance().getReference("ProjectMedi")
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

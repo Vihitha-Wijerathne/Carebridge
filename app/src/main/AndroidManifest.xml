@@ -12,6 +12,20 @@
         android:theme="@style/Theme.Carebridge"
         tools:targetApi="31">
         <activity
+            android:name=".EditMediCard"
+            android:exported="false" />
+        <activity
+            android:name=".EditFoodCard"
+            android:exported="false" />
+        <activity
+            android:name=".EditEduCard"
+            android:exported="false"
+            android:label="@string/title_activity_edit_edu_card"
+            android:theme="@style/Theme.Carebridge.NoActionBar" />
+        <activity
+            android:name=".MedicineCard"
+            android:exported="false" />
+        <activity
             android:name=".FoodCard"
             android:exported="false"
             android:label="@string/title_activity_food_card"

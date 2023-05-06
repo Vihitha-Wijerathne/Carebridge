@@ -29,10 +29,10 @@ class EduAdaptor (private val projectList: ArrayList<ProjectModel>) : RecyclerVi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = projectList[position]
-        if(currentItem.projecType=="Education") {
+
             holder.projectName.text = currentItem.projectName
             holder.projectDescription.text = currentItem.projectDescription
-        }
+
     }
 
     override fun getItemCount(): Int {
