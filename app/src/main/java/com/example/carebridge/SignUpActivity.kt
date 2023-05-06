@@ -12,11 +12,17 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.carebridge.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.IgnoreExtraProperties
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +31,7 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("users")
 
         binding.alreadyAcc.setOnClickListener{
             val intent = Intent(this,SignInActivity::class.java)
@@ -32,6 +39,10 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         binding.regButton.setOnClickListener{
+            val name = binding.pName.text.toString()
+            val phoneNumb = binding.regPhone.text.toString()
+            val website = binding.website.text.toString()
+            val location = binding.location.text.toString()
             val email = binding.regEmail.text.toString()
             val pass = binding.regPassword.text.toString()
             val confirmPass = binding.rePassword.text.toString()
@@ -41,6 +52,24 @@ class SignUpActivity : AppCompatActivity() {
 
                     firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener {
                         if(it.isSuccessful){
+                            @IgnoreExtraProperties
+                            data class User(val username: String? = null, val email: String? = null, val phoneNumb: String? = null, val website: String? = null, val location: String? = null) {
+                                // Null default values create a no-argument default constructor, which is needed
+                                // for deserialization from a DataSnapshot.
+                            }
+
+                            fun writeNewUser(userId: String, name: String, email: String, phoneNumb: String, website: String, location: String) {
+                                val user = User(name, email, phoneNumb, website, location)
+                                database.child(userId).setValue(user)
+                            }
+
+                            val user = firebaseAuth.currentUser
+                            user?.let {
+                                val uid = it.uid
+
+                                writeNewUser(uid, name, email, phoneNumb, website, location)
+                            }
+
                             val intent = Intent(this,SignInActivity::class.java)
                             startActivity(intent)
                         }else{

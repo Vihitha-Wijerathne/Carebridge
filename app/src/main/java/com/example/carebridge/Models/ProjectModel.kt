@@ -1,6 +1,7 @@
 package com.example.carebridge.Models
 
 data class ProjectModel(
+    var userId: String? = null,
     var projectId: String? = null,
     var projectName: String? = null,
     var projectDate: String? = null,
