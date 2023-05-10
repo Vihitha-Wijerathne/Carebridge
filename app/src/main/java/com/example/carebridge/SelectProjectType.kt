@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.example.carebridge.Add.AddProject
+import com.example.carebridge.Add.AddProjectFood
+import com.example.carebridge.Add.AddProjectMedi
 
 
 class SelectProjectType : Fragment() {
