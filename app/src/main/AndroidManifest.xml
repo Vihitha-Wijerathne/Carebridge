@@ -12,13 +12,13 @@
         android:theme="@style/Theme.Carebridge"
         tools:targetApi="31">
         <activity
-            android:name=".EditMediCard"
+            android:name=".Edit.EditMediCard"
             android:exported="false" />
         <activity
-            android:name=".EditFoodCard"
+            android:name=".Edit.EditFoodCard"
             android:exported="false" />
         <activity
-            android:name=".EditEduCard"
+            android:name=".Edit.EditEduCard"
             android:exported="false"
             android:label="@string/title_activity_edit_edu_card"
             android:theme="@style/Theme.Carebridge.NoActionBar" />

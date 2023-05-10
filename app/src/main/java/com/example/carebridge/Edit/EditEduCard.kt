@@ -1,4 +1,4 @@
-package com.example.carebridge
+package com.example.carebridge.Edit
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,10 +9,12 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.carebridge.MainActivity
 import com.example.carebridge.Models.ProjectModel
+import com.example.carebridge.R
 import com.google.firebase.database.FirebaseDatabase
 
-class EditFoodCard : AppCompatActivity() {
+class EditEduCard : AppCompatActivity() {
 
     private lateinit var prName: TextView
     private lateinit var prDate: TextView
@@ -23,11 +25,11 @@ class EditFoodCard : AppCompatActivity() {
     private lateinit var editbutton: Button
     private lateinit var deletebutton: Button
 
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_food_card)
-
+        setContentView(R.layout.activity_edit_edu_card)
 
         prName = findViewById(R.id.prName)
         prDate = findViewById(R.id.prDate)
@@ -40,6 +42,7 @@ class EditFoodCard : AppCompatActivity() {
 
         initView()
         setValuesToViews()
+
         editbutton.setOnClickListener {
             openUpdateDialog(
                 intent.getStringExtra("pId").toString(),
@@ -55,16 +58,15 @@ class EditFoodCard : AppCompatActivity() {
 
 
     }
-
     private fun deleteRecord(
         id:String
     ){
-        val dbref = FirebaseDatabase.getInstance().getReference("ProjectFood").child(id)
+        val dbref = FirebaseDatabase.getInstance().getReference("Project").child(id)
         val mTask = dbref.removeValue()
 
         mTask.addOnSuccessListener {
             Toast.makeText(this,"Successfully deleted", Toast.LENGTH_LONG).show()
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             finish()
 
         }.addOnFailureListener{error ->
@@ -72,9 +74,11 @@ class EditFoodCard : AppCompatActivity() {
         }
     }
 
+
     private fun initView() {}
 
     private fun setValuesToViews(){
+
         prName.text = intent.getStringExtra("pName")
         prDate.text = intent.getStringExtra("pDate")
         prTime.text = intent.getStringExtra("pTime")
@@ -84,6 +88,7 @@ class EditFoodCard : AppCompatActivity() {
 
     }
 
+    @SuppressLint("MissingInflatedId", "CutPasteId")
     private fun openUpdateDialog(
         pId: String,
         pname: String
@@ -124,7 +129,7 @@ class EditFoodCard : AppCompatActivity() {
                 edescription.text.toString(),
                 econtact.text.toString()
             )
-            Toast.makeText(applicationContext,"Updated", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext,"Updated",Toast.LENGTH_LONG).show()
 
             prName.text = ename.text.toString()
             prDate.text = edate.text.toString()
@@ -148,10 +153,13 @@ class EditFoodCard : AppCompatActivity() {
         description:String,
         contact:String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("ProjectFood").child(id)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Project").child(id)
 
         val proInfo = ProjectModel(id,name,date,time,location,description,contact)
 
         dbRef.setValue(proInfo)
     }
+
+
+
 }

@@ -1,4 +1,4 @@
-package com.example.carebridge
+package com.example.carebridge.Add
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.carebridge.Models.ProjectModel
+import com.example.carebridge.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase

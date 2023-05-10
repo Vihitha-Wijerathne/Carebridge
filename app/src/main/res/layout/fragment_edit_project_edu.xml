@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout9"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProjectEdu">
+    tools:context=".Edit.EditProjectEdu">
     <ImageView
         android:id="@+id/background"
         android:layout_width="match_parent"
