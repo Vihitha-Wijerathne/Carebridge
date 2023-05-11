@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carebridge.Adaptors.MedAdaptor
 import com.example.carebridge.Models.ProjectModel
 import com.example.carebridge.R
+import com.example.carebridge.UserMainFrag.SelectEditType
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -40,6 +42,14 @@ class EditProjectMedi : Fragment() {
         projectList = arrayListOf<ProjectModel>()
 
         getProjectData()
+
+        val backBtn = view.findViewById<ImageView>(R.id.back_button2)
+        backBtn.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, SelectEditType())
+                .addToBackStack(null)
+                .commit()
+        }
 
         return view
     }

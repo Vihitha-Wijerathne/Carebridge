@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.carebridge.Models.ProjectModel
 import com.example.carebridge.R
+import com.example.carebridge.UserMainFrag.SelectProjectType
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -65,6 +66,14 @@ class AddProjectMedi : Fragment() {
 
         submitBtn.setOnClickListener {
             saveProjectData()
+        }
+
+        val backBtn = view.findViewById<ImageView>(R.id.mback_button)
+        backBtn.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, SelectProjectType())
+                .addToBackStack(null)
+                .commit()
         }
 
         return view
