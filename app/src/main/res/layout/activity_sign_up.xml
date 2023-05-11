@@ -41,10 +41,11 @@
             android:id="@+id/add_project"
             android:layout_width="223dp"
             android:layout_height="74dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
             android:text="@string/register"
             android:textSize="58sp"
             android:textStyle="bold"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/back_button" />

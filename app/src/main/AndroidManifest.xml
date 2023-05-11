@@ -12,7 +12,17 @@
         android:theme="@style/Theme.Carebridge"
         tools:targetApi="31">
         <activity
-            android:name=".Edit.EditMediCard"
+            android:name=".EditProfile"
+            android:exported="false"
+            android:label="@string/title_activity_edit_profile"
+            android:theme="@style/Theme.Carebridge.NoActionBar" />
+        <activity
+            android:name=".PasswordReset"
+            android:exported="false"
+            android:label="@string/title_activity_password_reset"
+            android:theme="@style/Theme.Carebridge.NoActionBar" />
+        <activity
+            android:name=".EditMediCard"
             android:exported="false" />
         <activity
             android:name=".Edit.EditFoodCard"

@@ -86,30 +86,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView8" />
 
-    <Button
-        android:id="@+id/edituserbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey1"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:text="Edit profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernametxt" />
-
     <TextView
         android:id="@+id/useremailtxt"
         android:layout_width="126dp"
         android:layout_height="44dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Email"
         android:textColor="#090909"
         app:layout_constraintEnd_toStartOf="@+id/useremail"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edituserbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/usernametxt" />
 
     <TextView
         android:id="@+id/useremail"
@@ -157,7 +145,7 @@
         android:layout_height="44dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="Status"
+        android:text="Website"
         android:textColor="#090909"
         app:layout_constraintEnd_toStartOf="@+id/userstatus"
         app:layout_constraintHorizontal_bias="0.5"
