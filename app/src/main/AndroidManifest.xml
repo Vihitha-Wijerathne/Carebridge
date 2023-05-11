@@ -52,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EducationCard"
+            android:name=".EducationMainFrag.EducationCard"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
