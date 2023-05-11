@@ -1,4 +1,4 @@
-package com.example.carebridge
+package com.example.carebridge.Edit
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,7 +9,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.carebridge.MainActivity
 import com.example.carebridge.Models.ProjectModel
+import com.example.carebridge.R
 import com.google.firebase.database.FirebaseDatabase
 
 class EditMediCard : AppCompatActivity() {
@@ -62,7 +64,7 @@ class EditMediCard : AppCompatActivity() {
 
         mTask.addOnSuccessListener {
             Toast.makeText(this,"Successfully deleted", Toast.LENGTH_LONG).show()
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             finish()
 
         }.addOnFailureListener{error ->
