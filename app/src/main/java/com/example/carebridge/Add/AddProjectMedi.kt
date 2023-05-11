@@ -27,6 +27,8 @@ class AddProjectMedi : Fragment() {
     private lateinit var submitBtn: Button
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var project: ProjectModel
+    private lateinit var vCount: Number
+
 
     @SuppressLint("MissingInflatedId", "CutPasteId")
     override fun onCreateView(
@@ -61,6 +63,7 @@ class AddProjectMedi : Fragment() {
         projectContact = view.findViewById(R.id.mp_contact)
         projectType = view.findViewById<Spinner>(R.id.spinner2)
         submitBtn = view.findViewById(R.id.msubmit_button)
+        vCount = 0
 
         dbRef = FirebaseDatabase.getInstance().getReference("ProjectMedi")
 
@@ -91,53 +94,78 @@ class AddProjectMedi : Fragment() {
 
         if (pName.isEmpty()){
             projectName.error = "please enter project name"
+            vCount = vCount as Int + 1
         }
 
         if (pDate.isEmpty()){
             projectDate.error = "please enter project date"
+            vCount = vCount as Int + 1
         }
 
         if (pTime.isEmpty()){
             projectTime.error = "please enter project time"
+            vCount = vCount as Int + 1
         }
 
         if (pLocation.isEmpty()){
             projectLocation.error = "please enter project Location"
+            vCount = vCount as Int + 1
         }
 
         if (pDescription.isEmpty()){
             projectDescription.error = "please enter project Description"
+            vCount = vCount as Int + 1
         }
 
         if (pContact.isEmpty()){
             projectContact.error = "please enter project Contact"
+            vCount = vCount as Int + 1
         }
 
-        firebaseAuth = FirebaseAuth.getInstance()
-        val user = firebaseAuth.currentUser
-        var projectId = ""
+        if(vCount == 0) {
+            firebaseAuth = FirebaseAuth.getInstance()
+            val user = firebaseAuth.currentUser
+            var projectId = ""
 
-        user?.let {
-            val uid = it.uid
+            user?.let {
+                val uid = it.uid
 
-            projectId = dbRef.push().key!!
-            project = ProjectModel(uid, projectId,pName,pDate,pTime,pLocation,pDescription,pContact,pType)
-        }
-
-        dbRef.child(projectId).setValue(project)
-            .addOnCompleteListener {
-                Toast.makeText(requireContext(),"Data insterted Successfully", Toast.LENGTH_LONG).show()
-
-                projectName.text.clear()
-                projectDate.text.clear()
-                projectTime.text.clear()
-                projectLocation.text.clear()
-                projectDescription.text.clear()
-                projectContact.text.clear()
-
-            }.addOnFailureListener { err ->
-                Toast.makeText(requireContext(),"Error ${err.message}", Toast.LENGTH_LONG).show()
+                projectId = dbRef.push().key!!
+                project = ProjectModel(
+                    uid,
+                    projectId,
+                    pName,
+                    pDate,
+                    pTime,
+                    pLocation,
+                    pDescription,
+                    pContact,
+                    pType
+                )
             }
+
+            dbRef.child(projectId).setValue(project)
+                .addOnCompleteListener {
+                    Toast.makeText(
+                        requireContext(),
+                        "Data insterted Successfully",
+                        Toast.LENGTH_LONG
+                    ).show()
+
+                    projectName.text.clear()
+                    projectDate.text.clear()
+                    projectTime.text.clear()
+                    projectLocation.text.clear()
+                    projectDescription.text.clear()
+                    projectContact.text.clear()
+
+                }.addOnFailureListener { err ->
+                    Toast.makeText(requireContext(), "Error ${err.message}", Toast.LENGTH_LONG)
+                        .show()
+                }
+        }else {
+            vCount = 0
+        }
     }
 
 
