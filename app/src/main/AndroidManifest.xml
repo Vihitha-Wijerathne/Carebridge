@@ -36,7 +36,7 @@
             android:name=".MedicineCard"
             android:exported="false" />
         <activity
-            android:name=".FoodCard"
+            android:name=".FoodMainFrag.FoodCard"
             android:exported="false"
             android:label="@string/title_activity_food_card"
             android:theme="@style/Theme.Carebridge.NoActionBar" />
