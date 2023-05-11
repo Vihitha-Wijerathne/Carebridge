@@ -1,4 +1,4 @@
-package com.example.carebridge
+package com.example.carebridge.EducationMainFrag
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carebridge.Adaptors.EduAdaptor
-import com.example.carebridge.EducationMainFrag.EducationCard
 import com.example.carebridge.Models.ProjectModel
+import com.example.carebridge.R
 import com.google.firebase.database.*
 
 class Educationfragment : Fragment() {
