@@ -1,17 +1,10 @@
-package com.example.carebridge
+package com.example.carebridge.WelcomePage
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.carebridge.R
 import com.example.carebridge.databinding.ActivityPasswordResetBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -30,7 +23,7 @@ class PasswordReset : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.noAcc.setOnClickListener{
-            val intent = Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
