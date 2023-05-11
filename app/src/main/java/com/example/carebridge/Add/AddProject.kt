@@ -32,6 +32,7 @@ class AddProject : Fragment() {
     private lateinit var submitBtn: Button
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var project: ProjectModel
+    private lateinit var vcount: Number
 
     @SuppressLint("CutPasteId")
     override fun onCreateView(
@@ -86,6 +87,8 @@ class AddProject : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        vcount = 0
         return view
     }
     private fun saveProjectData(){

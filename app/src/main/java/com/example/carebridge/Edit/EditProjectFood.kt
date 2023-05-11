@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.carebridge.Adaptors.FoodAdaptor
 import com.example.carebridge.Models.ProjectModel
 import com.example.carebridge.R
+import com.example.carebridge.UserMainFrag.SelectEditType
 import com.example.carebridge.UserMainFrag.SelectProjectType
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -26,6 +27,8 @@ class EditProjectFood : Fragment() {
     private lateinit var projectList: ArrayList<ProjectModel>
     private lateinit var dbRef: DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var count: Number
+    private lateinit var projectCount: TextView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -39,10 +42,20 @@ class EditProjectFood : Fragment() {
         projectsRecyclerView.layoutManager = LinearLayoutManager(context)
         projectsRecyclerView.setHasFixedSize(true)
         loadingData = view.findViewById(R.id.foodLoading)
+        projectCount = view.findViewById(R.id.pcount)
+        count = 0
 
         projectList = arrayListOf<ProjectModel>()
 
         getProjectData()
+
+        val backBtn = view.findViewById<ImageView>(R.id.back_button2)
+        backBtn.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, SelectEditType())
+                .addToBackStack(null)
+                .commit()
+        }
 
 
 
@@ -70,6 +83,7 @@ class EditProjectFood : Fragment() {
                         val projectData = projectSnap.getValue(ProjectModel::class.java)
 
                         if(projectData?.userId.equals(userId)) {
+                            count = count as Int + 1
                             projectList.add(projectData!!)
                         }
                     }
@@ -94,6 +108,8 @@ class EditProjectFood : Fragment() {
                         }
 
                     })
+
+                    projectCount.text = count.toString()
 
                     projectsRecyclerView.visibility = View.VISIBLE
                     loadingData.visibility = View.GONE

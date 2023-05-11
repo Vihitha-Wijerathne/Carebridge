@@ -27,6 +27,8 @@ class EditProjectEdu : Fragment() {
     private lateinit var projectList: ArrayList<ProjectModel>
     private lateinit var dbRef: DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var projectCount: TextView
+    private lateinit var count: Number
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -40,10 +42,15 @@ class EditProjectEdu : Fragment() {
         projectsRecyclerView.layoutManager = LinearLayoutManager(context)
         projectsRecyclerView.setHasFixedSize(true)
         loadingData = view.findViewById(R.id.educationLoading)
+        projectCount = view.findViewById(R.id.pcount)
+        count = 0
+
 
         projectList = arrayListOf<ProjectModel>()
 
         getProjectData()
+
+
 
         val backBtn = view.findViewById<ImageView>(R.id.back_button2)
         backBtn.setOnClickListener {
@@ -53,8 +60,12 @@ class EditProjectEdu : Fragment() {
                 .commit()
         }
 
+
+
+
         return view
     }
+
 
     private fun getProjectData(){
         var userId = ""
@@ -73,10 +84,12 @@ class EditProjectEdu : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 projectList.clear()
                 if (snapshot.exists()){
+
                     for (projectSnap in snapshot.children){
                         val projectData = projectSnap.getValue(ProjectModel::class.java)
 
                         if(projectData?.userId.equals(userId)) {
+                            count = count as Int + 1
                             projectList.add(projectData!!)
                         }
                     }
@@ -101,6 +114,7 @@ class EditProjectEdu : Fragment() {
                         }
 
                     })
+                    projectCount.text = count.toString()
 
                     projectsRecyclerView.visibility = View.VISIBLE
                     loadingData.visibility = View.GONE

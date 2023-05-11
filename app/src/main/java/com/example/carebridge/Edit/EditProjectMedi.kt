@@ -25,6 +25,8 @@ class EditProjectMedi : Fragment() {
     private lateinit var projectList: ArrayList<ProjectModel>
     private lateinit var dbRef: DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var count: Number
+    private lateinit var projectCount: TextView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -38,6 +40,8 @@ class EditProjectMedi : Fragment() {
         projectsRecyclerView.layoutManager = LinearLayoutManager(context)
         projectsRecyclerView.setHasFixedSize(true)
         loadingData = view.findViewById(R.id.medicineLoading)
+        projectCount = view.findViewById(R.id.pcount)
+        count = 0
 
         projectList = arrayListOf<ProjectModel>()
 
@@ -75,6 +79,7 @@ class EditProjectMedi : Fragment() {
                         val projectData = projectSnap.getValue(ProjectModel::class.java)
 
                         if(projectData?.userId.equals(userId)) {
+                            count = count as Int + 1
                             projectList.add(projectData!!)
                         }
                     }
@@ -100,6 +105,8 @@ class EditProjectMedi : Fragment() {
                         }
 
                     })
+
+                    projectCount.text = count.toString()
 
                     projectsRecyclerView.visibility = View.VISIBLE
                     loadingData.visibility = View.GONE
