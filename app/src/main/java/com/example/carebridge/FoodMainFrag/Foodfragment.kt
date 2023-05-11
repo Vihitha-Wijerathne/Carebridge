@@ -1,4 +1,4 @@
-package com.example.carebridge
+package com.example.carebridge.FoodMainFrag
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carebridge.Adaptors.FoodAdaptor
 import com.example.carebridge.Models.ProjectModel
+import com.example.carebridge.R
 import com.google.firebase.database.*
 
 class Foodfragment : Fragment() {
