@@ -1,4 +1,4 @@
-package com.example.carebridge
+package com.example.carebridge.Edit
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -10,13 +10,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.carebridge.Adaptors.FoodAdaptor
+import com.example.carebridge.Adaptors.MedAdaptor
 import com.example.carebridge.Models.ProjectModel
+import com.example.carebridge.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 
-class EditProjectFood : Fragment() {
+class EditProjectMedi : Fragment() {
     private lateinit var projectsRecyclerView: RecyclerView
     private lateinit var loadingData: TextView
     private lateinit var projectList: ArrayList<ProjectModel>
@@ -29,17 +30,16 @@ class EditProjectFood : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_edit_project_food, container, false)
+        val view = inflater.inflate(R.layout.fragment_edit_project_medi, container, false)
 
-        projectsRecyclerView = view.findViewById(R.id.foodprojects)
+        projectsRecyclerView = view.findViewById(R.id.medicineprojects)
         projectsRecyclerView.layoutManager = LinearLayoutManager(context)
         projectsRecyclerView.setHasFixedSize(true)
-        loadingData = view.findViewById(R.id.foodLoading)
+        loadingData = view.findViewById(R.id.medicineLoading)
 
         projectList = arrayListOf<ProjectModel>()
 
         getProjectData()
-
 
         return view
     }
@@ -50,7 +50,7 @@ class EditProjectFood : Fragment() {
         projectsRecyclerView.visibility = View.GONE
         loadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("ProjectFood")
+        dbRef = FirebaseDatabase.getInstance().getReference("ProjectMedi")
 
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseAuth.currentUser?.let {
@@ -68,13 +68,13 @@ class EditProjectFood : Fragment() {
                             projectList.add(projectData!!)
                         }
                     }
-                    val projectAdaptor = FoodAdaptor(projectList)
+                    val projectAdaptor = MedAdaptor(projectList)
                     projectsRecyclerView.adapter = projectAdaptor
 
-                    projectAdaptor.setOnItemClickListner(object : FoodAdaptor.onItemClickListner {
+                    projectAdaptor.setOnItemClickListner(object : MedAdaptor.onItemClickListner {
                         override fun onItemClick(position: Int) {
 
-                            val intent = Intent(context, EditFoodCard::class.java)
+                            val intent = Intent(context, EditMediCard::class.java)
 
                             //put extras
                             intent.putExtra("pId", projectList[position].projectId)
@@ -85,6 +85,7 @@ class EditProjectFood : Fragment() {
                             intent.putExtra("pDescription", projectList[position].projectDescription)
                             intent.putExtra("pContact", projectList[position].projectContact)
                             startActivity(intent)
+
 
                         }
 
