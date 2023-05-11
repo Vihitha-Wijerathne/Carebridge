@@ -27,7 +27,7 @@
     <string name="add_n_project">Add Project/Need</string>
     <string name="p_name">Project/Item Name</string>
     <string name="p_date">Date:  dd/mm/yyyy</string>
-    <string name="p_time">Time:    :   </string>
+    <string name="p_time">Time: hh:mm </string>
     <string name="p_place">Place/Location</string>
     <string name="p_description">Description</string>
     <string name="p_contatct">Contact Details</string>
@@ -40,7 +40,7 @@
     <string name="edit_n_project">Edit Project/Need</string>
     <string name="e_name">Project/Item Name</string>
     <string name="e_date">Date:  dd/mm/yyyy</string>
-    <string name="e_time">Time:    :   </string>
+    <string name="e_time">Time: hh:mm </string>
     <string name="e_place">Place/Location</string>
     <string name="e_description">Description</string>
     <string name="e_contatct">Contact Details</string>
