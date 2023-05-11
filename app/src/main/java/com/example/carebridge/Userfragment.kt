@@ -8,12 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.example.carebridge.Adaptors.EduAdaptor
-import com.example.carebridge.Models.ProjectModel
-import com.example.carebridge.databinding.ActivitySignUpBinding
+import com.example.carebridge.UserMainFrag.SelectEditType
+import com.example.carebridge.UserMainFrag.SelectProjectType
+import com.example.carebridge.WelcomePage.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import java.util.Objects
 
 data class UserModel(
     var email: String? = null,

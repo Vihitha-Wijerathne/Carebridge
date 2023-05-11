@@ -1,24 +1,14 @@
-package com.example.carebridge
+package com.example.carebridge.WelcomePage
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Email
-import android.util.Log
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.carebridge.databinding.ActivityPasswordResetBinding
 import com.example.carebridge.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.IgnoreExtraProperties
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -36,7 +26,7 @@ class SignUpActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("users")
 
         binding.alreadyAcc.setOnClickListener{
-            val intent = Intent(this,SignInActivity::class.java)
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
 
@@ -81,7 +71,7 @@ class SignUpActivity : AppCompatActivity() {
                                     }
                             }
 
-                            val intent = Intent(this,SignInActivity::class.java)
+                            val intent = Intent(this, SignInActivity::class.java)
                             startActivity(intent)
 
 

@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectEditType">
+    tools:context=".UserMainFrag.SelectEditType">
     <ImageView
     android:id="@+id/background"
     android:layout_width="match_parent"

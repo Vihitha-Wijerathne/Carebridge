@@ -1,14 +1,10 @@
-package com.example.carebridge
+package com.example.carebridge.WelcomePage
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.carebridge.MainActivity
 import com.example.carebridge.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -25,7 +21,7 @@ class SignInActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.noAcc.setOnClickListener{
-            val intent = Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
         binding.forgetPwd.setOnClickListener{
@@ -80,7 +76,7 @@ class SignInActivity : AppCompatActivity() {
         super.onStart()
 
         if(firebaseAuth.currentUser != null){
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

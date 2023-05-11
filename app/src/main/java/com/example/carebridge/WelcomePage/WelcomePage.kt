@@ -1,13 +1,9 @@
-package com.example.carebridge
+package com.example.carebridge.WelcomePage
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.carebridge.MainActivity
 import com.example.carebridge.databinding.ActivityWelcomePageBinding
 import com.google.firebase.auth.FirebaseAuth
 

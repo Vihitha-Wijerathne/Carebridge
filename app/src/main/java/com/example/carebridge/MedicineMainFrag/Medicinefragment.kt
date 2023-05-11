@@ -1,4 +1,4 @@
-package com.example.carebridge
+package com.example.carebridge.MedicineMainFrag
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carebridge.Adaptors.MedAdaptor
 import com.example.carebridge.Models.ProjectModel
+import com.example.carebridge.R
 import com.google.firebase.database.*
 
 

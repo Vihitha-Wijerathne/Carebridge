@@ -12,7 +12,8 @@
         android:theme="@style/Theme.Carebridge"
         tools:targetApi="31">
         <activity
-            android:name=".PasswordReset"
+        <activity
+            android:name=".WelcomePage.PasswordReset"
             android:exported="false"
             android:label="@string/title_activity_password_reset"
             android:theme="@style/Theme.Carebridge.NoActionBar" />
@@ -28,15 +29,15 @@
             android:label="@string/title_activity_edit_edu_card"
             android:theme="@style/Theme.Carebridge.NoActionBar" />
         <activity
-            android:name=".MedicineCard"
+            android:name=".MedicineMainFrag.MedicineCard"
             android:exported="false" />
         <activity
-            android:name=".FoodCard"
+            android:name=".FoodMainFrag.FoodCard"
             android:exported="false"
             android:label="@string/title_activity_food_card"
             android:theme="@style/Theme.Carebridge.NoActionBar" />
         <activity
-            android:name=".WelcomePage"
+            android:name=".WelcomePage.WelcomePage"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Carebridge.NoActionBar">
@@ -47,15 +48,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EducationCard"
+            android:name=".EducationMainFrag.EducationCard"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".WelcomePage.SignUpActivity"
             android:exported="false"
             android:label="@string/title_activity_sign_up"
             android:theme="@style/Theme.Carebridge.NoActionBar" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".WelcomePage.SignInActivity"
             android:exported="false"
             android:label="@string/title_activity_sign_in"
             android:theme="@style/Theme.Carebridge.NoActionBar" />

@@ -1,10 +1,12 @@
-package com.example.carebridge
+package com.example.carebridge.EducationMainFrag
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.carebridge.R
 
-class MedicineCard : AppCompatActivity() {
+class EducationCard : AppCompatActivity() {
+
     private lateinit var prName: TextView
     private lateinit var prDate: TextView
     private lateinit var prTime: TextView
@@ -12,9 +14,11 @@ class MedicineCard : AppCompatActivity() {
     private lateinit var prDescription: TextView
     private lateinit var prContact: TextView
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_medicine_card)
+        setContentView(R.layout.activity_education_card)
 
         prName = findViewById(R.id.prName)
         prDate = findViewById(R.id.prDate)
@@ -25,9 +29,10 @@ class MedicineCard : AppCompatActivity() {
 
         initView()
         setValuesToViews()
+
     }
 
-    private fun initView(){}
+    private fun initView() {}
 
     private fun setValuesToViews(){
         prName.text = intent.getStringExtra("pName")
@@ -36,7 +41,6 @@ class MedicineCard : AppCompatActivity() {
         prLocation.text = intent.getStringExtra("pLocation")
         prDescription.text = intent.getStringExtra("pDescription")
         prContact.text = intent.getStringExtra("pContact")
-
 
     }
 }
