@@ -3,6 +3,7 @@ package com.example.carebridge
 import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Email
+import android.util.Log
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.carebridge.databinding.ActivityPasswordResetBinding
 import com.example.carebridge.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -68,10 +70,21 @@ class SignUpActivity : AppCompatActivity() {
                                 val uid = it.uid
 
                                 writeNewUser(uid, name, email, phoneNumb, website, location)
+
+                                user?.sendEmailVerification()
+                                    ?.addOnCompleteListener(this) { task ->
+                                        if (task.isSuccessful) {
+                                            Toast.makeText(this, "Verification email sent to ${user.email}", Toast.LENGTH_SHORT).show()
+                                        } else {
+                                            Toast.makeText(this, "Failed to send verification email.", Toast.LENGTH_SHORT).show()
+                                        }
+                                    }
                             }
 
                             val intent = Intent(this,SignInActivity::class.java)
                             startActivity(intent)
+
+
                         }else{
                             Toast.makeText(this,it.exception.toString(), Toast.LENGTH_SHORT).show()
                         }

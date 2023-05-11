@@ -28,6 +28,10 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this,SignUpActivity::class.java)
             startActivity(intent)
         }
+        binding.forgetPwd.setOnClickListener{
+            val intent = Intent(this, PasswordReset::class.java)
+            startActivity(intent)
+        }
 
         binding.logButton.setOnClickListener{
             val email = binding.logEmail.text.toString()
@@ -62,7 +66,7 @@ class SignInActivity : AppCompatActivity() {
                             }
 
                         } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Email or Password is Incorrect", Toast.LENGTH_SHORT).show()
                         }
                     }
             }else{
@@ -70,6 +74,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
     }
+
 
     override fun onStart() {
         super.onStart()
