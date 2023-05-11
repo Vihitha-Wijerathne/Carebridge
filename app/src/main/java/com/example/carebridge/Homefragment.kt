@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import com.example.carebridge.EducationMainFrag.Educationfragment
 import com.example.carebridge.FoodMainFrag.Foodfragment
+import com.example.carebridge.MedicineMainFrag.Medicinefragment
 
 class Homefragment : Fragment() {
 
