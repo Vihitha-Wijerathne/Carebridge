@@ -1,9 +1,12 @@
 package com.example.carebridge.EducationMainFrag
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import com.example.carebridge.R
+import com.example.carebridge.WelcomePage.SignInActivity
 
 class EducationCard : AppCompatActivity() {
 

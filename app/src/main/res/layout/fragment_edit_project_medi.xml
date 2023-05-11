@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".Edit.EditProjectMedi">
 
+    <TextView
+        android:id="@+id/pcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/medicineprojects"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.539" />
 
     <ImageView
         android:id="@+id/back_button2"
