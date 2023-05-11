@@ -17,7 +17,7 @@
             android:label="@string/title_activity_password_reset"
             android:theme="@style/Theme.Carebridge.NoActionBar" />
         <activity
-            android:name=".EditMediCard"
+            android:name=".Edit.EditMediCard"
             android:exported="false" />
         <activity
             android:name=".Edit.EditFoodCard"
