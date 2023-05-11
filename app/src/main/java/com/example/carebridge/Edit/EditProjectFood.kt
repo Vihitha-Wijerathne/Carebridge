@@ -7,12 +7,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carebridge.Adaptors.FoodAdaptor
 import com.example.carebridge.Models.ProjectModel
 import com.example.carebridge.R
+import com.example.carebridge.UserMainFrag.SelectProjectType
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -40,6 +43,7 @@ class EditProjectFood : Fragment() {
         projectList = arrayListOf<ProjectModel>()
 
         getProjectData()
+
 
 
         return view

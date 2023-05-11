@@ -1,5 +1,6 @@
 package com.example.carebridge.Add
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +11,8 @@ import androidx.fragment.app.Fragment
 import com.example.carebridge.MainActivity
 import com.example.carebridge.Models.ProjectModel
 import com.example.carebridge.R
+import com.example.carebridge.UserMainFrag.SelectEditType
+import com.example.carebridge.UserMainFrag.SelectProjectType
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -30,6 +33,7 @@ class AddProject : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var project: ProjectModel
 
+    @SuppressLint("CutPasteId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -73,6 +77,14 @@ class AddProject : Fragment() {
 
         submitBtn.setOnClickListener {
             saveProjectData()
+        }
+
+        val backBtn = view.findViewById<ImageView>(R.id.back_button)
+        backBtn.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, SelectProjectType())
+                .addToBackStack(null)
+                .commit()
         }
         return view
     }
