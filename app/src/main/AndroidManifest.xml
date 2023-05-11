@@ -33,7 +33,7 @@
             android:label="@string/title_activity_edit_edu_card"
             android:theme="@style/Theme.Carebridge.NoActionBar" />
         <activity
-            android:name=".MedicineCard"
+            android:name=".MedicineMainFrag.MedicineCard"
             android:exported="false" />
         <activity
             android:name=".FoodMainFrag.FoodCard"

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import com.example.carebridge.EducationMainFrag.Educationfragment
 import com.example.carebridge.FoodMainFrag.Foodfragment
+import com.example.carebridge.MedicineMainFrag.Medicinefragment
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
