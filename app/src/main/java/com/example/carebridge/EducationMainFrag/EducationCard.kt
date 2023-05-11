@@ -1,8 +1,9 @@
-package com.example.carebridge
+package com.example.carebridge.EducationMainFrag
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.carebridge.R
 
 class EducationCard : AppCompatActivity() {
 
